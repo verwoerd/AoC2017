@@ -1,4 +1,5 @@
 rootProject.name = "aoc-template"
 include(
-  "shared"
-         )
+  "shared",
+  "day01"
+       )
