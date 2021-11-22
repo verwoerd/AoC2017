@@ -1,4 +1,4 @@
-rootProject.name = "aoc-template"
+rootProject.name = "AoC2017"
 include(
   "shared",
   "day01",
@@ -7,5 +7,6 @@ include(
   "day04",
   "day05",
   "day06",
-  "day07"
+  "day07",
+  "day08"
        )
