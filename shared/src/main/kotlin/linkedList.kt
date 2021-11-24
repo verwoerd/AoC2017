@@ -56,3 +56,6 @@ fun <T> LinkedList<T>.swapValues(a: T, b: T): LinkedList<T> {
   rotateBack(switch)
   return this
 }
+
+fun <T> linkedListOf(vararg elements: T) =
+  elements.toCollection(LinkedList())
