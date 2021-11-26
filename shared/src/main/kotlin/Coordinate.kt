@@ -33,7 +33,7 @@ val manhattanOriginComparator = Comparator { a: Coordinate, b: Coordinate ->
   )
 }
 
-fun <V> Map<Coordinate, V>.yRange() = keys.minByOrNull { it.y }?.y to keys.maxByOrNull { it.y }?.y
+fun <V> Map<Coordinate, V>.yRange() = keys.minByOrNull { it.y }!!.y to keys.maxByOrNull { it.y }!!.y
 
 fun <V> Map<Coordinate, V>.xRange() = keys.minByOrNull { it.x }!!.x to keys.maxByOrNull { it.x }!!.x
 
@@ -65,4 +65,25 @@ enum class FourDirections(val direction: Coordinate) {
   RIGHT(Coordinate(1, 0));
 
   operator fun plus(other: Coordinate) = direction + other
+
+  fun turnLeft() = when (this) {
+    UP -> LEFT
+    LEFT -> DOWN
+    DOWN -> RIGHT
+    RIGHT -> UP
+  }
+
+  fun turnRight() = when (this) {
+    UP -> RIGHT
+    RIGHT -> DOWN
+    DOWN -> LEFT
+    LEFT -> UP
+  }
+
+  fun turnAround() = when (this) {
+    UP -> DOWN
+    DOWN -> UP
+    LEFT -> RIGHT
+    RIGHT -> LEFT
+  }
 }
